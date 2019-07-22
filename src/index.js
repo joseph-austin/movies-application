@@ -21,7 +21,7 @@ import getMovies from './api.js';
 //     alert('Oh no! Something went wrong.\nCheck the console for details.')
 //     console.log(error);
 // });
-////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////
 let ids;
 getMovies()
     .then((movies) => {
