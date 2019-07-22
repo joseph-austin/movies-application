@@ -61,3 +61,24 @@ html, body {
     color:#FF912C;
 }
 
+/*//////////add to html*/
+/*<i class="fas fa-film"></i>*/
+.fa-film {
+    animation: rotate 0.5s infinite linear;
+}
+
+/*@keyframes rotate {*/
+/*    from {*/
+/*        transform: rotate(0deg);*/
+/*    }*/
+/*    to {*/
+/*        transform: rotate(360deg);*/
+/*    }*/
+/*}*/
+
+/*img.star {*/
+/*    animation-name:            rotate;*/
+/*    animation-duration:        0.5s;*/
+/*    animation-iteration-count: infinite;*/
+/*    animation-timing-function: linear;*/
+/*}*/
