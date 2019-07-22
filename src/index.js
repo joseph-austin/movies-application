@@ -32,28 +32,32 @@ getMovies()
         $('#load').html('');
         movies.forEach(({title, rating, id}) => {
             console.log(`id#${id} - ${title} - rating: ${rating}/5`);
-            $('#movieList').append(`<br><div>id#${id} - ${title} - rating: ${rating}/5 <button type="submit" class="btn btn-primary edit"><i class="fas fa-edit"></i></button> 
-<button type="submit" class="btn btn-primary delete"><i class="fas fa-trash"></i></div></button>`);
+            $('#movieList').append(`<br><div id="${id}">id#${id} - ${title} - rating: ${rating}/5 <button type="submit" class="btn btn-primary edit"><i class="fas fa-edit"></i></button> 
+<button type="submit" class="btn btn-primary delete"><i class="fas fa-trash"></i></button></div>`);
         });
 
         $('.edit').click(function () {
-            $('#editor').html('');
-            movies.forEach(({title, rating, id}) => {
-                    console.log(`id#${id} - ${title} - rating: ${rating}/5`);
-                    $('#editor').append(`<br><div>id#${id} -<form>
+            // $(this).html('');
+
+            var movieId = $(this).parent().attr("id");
+            // var movieOldTitle = $(movieId).children().first().value;
+            // console.log($('#' + movieId).val);
+            var movieOldTitle = movies[movieId-1].title;
+            var movieOldRating = movies[movieId-1].rating;
+            console.log(movieOldRating);
+            console.log(movieOldTitle);
+
+            $(this).parent().html(`<br><div>id#${movieId} -<form>
   <div class="row">
     <div class="col">
-      <input type="text" class="form-control" id="editorRate" value="${rating}">
+      <input type="text" class="form-control" id="editorRate" value='variable.movieOldRating'>
     </div>
     <div class="col">
-      <input type="text" class="form-control" id="editorTitle"  value="${title}">
+      <input type="text" class="form-control" id="editorTitle" value="movieOldTitle">
     </div>
   </div>
 </form>`);
 
-
-
-            });
 
             //
             //     $('#modal').html(`
@@ -82,39 +86,40 @@ getMovies()
             // )
 
 
-        })})
-            .catch((error) => {
-                alert('Oh no! Something went wrong.\nCheck the console for details.');
-                console.log(error);
-            });
+        })
+    })
+    .catch((error) => {
+        alert('Oh no! Something went wrong.\nCheck the console for details.');
+        console.log(error);
+    });
 
-        const $ = require('jquery');
+const $ = require('jquery');
 
-        $(document).ready(
-            console.log('JQuery up and running')
-        );
+$(document).ready(
+    console.log('JQuery up and running')
+);
 
 ///////////User Submissions
 
-        $('#submit').on('click', function () {
-            let title = document.getElementById('named').value;
-            // console.log(title);
-            // console.log(document.getElementById('named').value);
-            let rating = document.getElementById('rated').value;
+$('#submit').on('click', function () {
+    let title = document.getElementById('named').value;
+    // console.log(title);
+    // console.log(document.getElementById('named').value);
+    let rating = document.getElementById('rated').value;
 
-            let movieAdded = {title: title, rating: rating, id: ids};
-            let url = '/api/movies';
-            let options = {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify(movieAdded),
-            };
-            fetch(url, options)
-                .then(/* post was created successfully */)
-                .catch(/* handle errors */);
-        });
+    let movieAdded = {title: title, rating: rating, id: ids};
+    let url = '/api/movies';
+    let options = {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(movieAdded),
+    };
+    fetch(url, options)
+        .then(/* post was created successfully */)
+        .catch(/* handle errors */);
+});
 
 //     let title = document.getElementById('named').value;
 //     // console.log(title);
