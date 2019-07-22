@@ -2,14 +2,32 @@ html, body {
     height: 100%;
 }
 
+body {
+    background-image: url("background.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    color: rgba(245, 245, 245, 1);
+
+}
+
 .container {
     /*top: 50%;*/
     /*transform: translateY(-100%);*/
     text-align: center;
+    background-color: dimgrey;
+    opacity: .9;
+
 }
+
+.container * {
+    opacity: 1 !important;
+}
+
 .invis {
     display: none;
 }
+
 .movieDiv {
     border: 1px solid black;
     width: 90%;
@@ -17,9 +35,11 @@ html, body {
     margin-right: auto;
     height: 200px;
 }
+
 .poster {
     border: 1px solid blue
 }
+
 /*.movieDiv>div {*/
 /*    display: flex;*/
 /*    margin-top: 1rem;*/
@@ -29,35 +49,60 @@ html, body {
 .movie-info {
     text-align: left;
 }
+
 .movie-buttons {
     text-align: right;
 }
 
 .rating-stars ul {
-    list-style-type:none;
-    padding:0;
+    list-style-type: none;
+    padding: 0;
 
-    -moz-user-select:none;
-    -webkit-user-select:none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
 }
+
 .rating-stars ul > li.star {
-    display:inline-block;
+    display: inline-block;
 
 }
 
 /* Idle State of the stars */
 .rating-stars ul > li.star > i.fa {
-    font-size:2.5em; /* Change the size of the stars */
-    color:#ccc; /* Color on idle state */
+    font-size: 2.5em; /* Change the size of the stars */
+    color: #ccc; /* Color on idle state */
 }
 
 /* Hover state of the stars */
 .rating-stars ul > li.star.hover > i.fa {
-    color:#FFCC36;
+    color: #FFCC36;
 }
 
 /* Selected state of the stars */
 .rating-stars ul > li.star.selected > i.fa {
-    color:#FF912C;
+    color: #FF912C;
 }
 
+/*//////////add to html*/
+/**/
+.fa-film {
+    animation: rotate 0.5s infinite linear;
+    margin-right: .1em;
+    font-size: 1.5em;
+}
+
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.fa-film {
+    animation-name: rotate;
+    animation-duration: 2.5s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
