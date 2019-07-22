@@ -7,9 +7,9 @@ sayHello('World');
 /**
  * require style imports
  */
-import move from './api.js';
+import getMovies from './api.js';
 
-move.getMovies().then((movies) => {
+getMovies().then((movies) => {
   console.log('Here are all the movies:');
   movies.forEach(({title, rating, id}) => {
     console.log(`id#${id} - ${title} - rating: ${rating}`);
