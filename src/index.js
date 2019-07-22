@@ -37,26 +37,27 @@ getMovies()
         });
 
         $('.edit').click(function () {
-            // $(this).html('');
-
-            var movieId = $(this).parent().attr("id");
-            // var movieOldTitle = $(movieId).children().first().value;
-            // console.log($('#' + movieId).val);
-            var movieOldTitle = movies[movieId-1].title;
-            var movieOldRating = movies[movieId-1].rating;
+            // $(this).parent().html('');
+            let movieId, movieOldTitle, movieOldRating;
+            movieId = $(this).parent().attr("id");
+            console.log(movieId);
+            movieOldTitle = movies[movieId - 1].title;
+            movieOldRating = movies[movieId - 1].rating;
             console.log(movieOldRating);
             console.log(movieOldTitle);
 
-            $(this).parent().html(`<br><div>id#${movieId} -<form>
+            $(this).parent().append(`<br><div>id#${movieId} -<form>
   <div class="row">
     <div class="col">
-      <input type="text" class="form-control" id="editorRate" value='variable.movieOldRating'>
+      <input type="text" class="form-control" id="editorRate${movieId}">
     </div>
     <div class="col">
-      <input type="text" class="form-control" id="editorTitle" value="movieOldTitle">
+      <input type="text" class="form-control" id="editorTitle${movieId}">
     </div>
   </div>
 </form>`);
+            $(`#editorRate${movieId}`).attr({value: movieOldRating});
+            $(`#editorTitle${movieId}`).attr({value: movieOldTitle})
 
 
             //
