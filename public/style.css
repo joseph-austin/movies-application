@@ -3,9 +3,9 @@ html, body {
 }
 
 .container {
-    position: relative;
-    top: 50%;
-    transform: translateY(-100%);
+    position: absolute;
+    /*top: 50%;*/
+    /*transform: translateY(-100%);*/
     text-align: center;
 }
 .invis {
