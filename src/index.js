@@ -101,6 +101,9 @@ getMovies()
                 .catch(/* handle errors */);
         });
 
+
+
+
 ////////////////////Delete Button Func
     //     $('#reset').on('click', function () {
     //         // let movieId = $(this).parent().attr("id");
