@@ -101,108 +101,117 @@ getMovies()
                 .catch(/* handle errors */);
         });
 
+////////////////////Delete Button Func
+    //     $('#reset').on('click', function () {
+    //         // let movieId = $(this).parent().attr("id");
+    //         // console.log(movieId);
+    //
+    //         // let movieEdited = {title: title, rating: rating, id: ids};
+    //         // console.log(movieEdited);
+    //         let url;
+    //         let options;
+    //         for (let i = movies.length; i > 0; i--) {
+    //             url = '/api/movies/' + (i);
+    //             console.log(movies.length);
+    //             console.log(url);
+    //             options = {
+    //                 method: 'DELETE',
+    //                 headers: {
+    //                     'Content-Type': 'application/json',
+    //                 }
+    //                 // body: JSON.stringify(movieEdited),
+    //             };
+    //         }
+    //
+    //         fetch(url, options)
+    //             .then(function () {
+    //             let resetStuff = {
+    //                 "title": "Star Wars: A New Hope",
+    //                 "rating": "5",
+    //                 "id": 2
+    //             };
+    //                 resetStuff += {
+    //                 "title": "Casablanca",
+    //                 "rating": "4",
+    //                 "id": 1
+    //             };
+    //             console.log(resetStuff);
+    //             let url = '/api/movies';
+    //             let options = {
+    //                 method: 'PATCH',
+    //                 headers: {
+    //                     'Content-Type': 'application/json',
+    //                 },
+    //                 body: JSON.stringify(resetStuff),
+    //             };
+    //             fetch(url, options)
+    //                 .then(/* post was created successfully */)
+    //                 .catch(/* handle errors */)
+    //         })
+    //         .catch(/* handle errors */);
+    // })
 
-        $('#reset').on('click', function () {
-            // let movieId = $(this).parent().attr("id");
-            // console.log(movieId);
+        //////////////////////////////////
 
-            // let movieEdited = {title: title, rating: rating, id: ids};
-            // console.log(movieEdited);
-            for (let i = movies.length; i > 0; i--) {
-                let url = '/api/movies/' + (i);
-                console.log(movies.length);
-                console.log(url);
-                let options = {
-                    method: 'DELETE',
-                    headers: {
-                        'Content-Type': 'application/json',
-                    }
-                    // body: JSON.stringify(movieEdited),
-                };
-                fetch(url, options)
-                    .then(/* post was created successfully */)
-                    .catch(/* handle errors */);
-            }
-            let resetStuff = {
-                    "title": "Casablanca",
-                    "rating": "4",
-                    "id": 1
-                },
-                {
-                    "title": "Star Wars: A New Hope",
-                    "rating": "5",
-                    "id": 2
-                };
-            let url = '/api/movies';
-            let options = {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify(resetStuff),
-            };
-            fetch(url, options)
-                .then(/* post was created successfully */)
-                .catch(/* handle errors */);
-        })
-        //     })
-        //         .then(function (){
-        //         let resetStuff =[{
-        //         "title": "Casablanca",
-        //             "rating": "4",
-        //             "id": 1
-        //     },
-        //     {
-        //         "title": "Star Wars: A New Hope",
-        //         "rating": "5",
-        //         "id": 2
-        //     }];
-        //     let url = '/api/movies';
-        //     let options = {
-        //         method: 'POST',
-        //         headers: {
-        //             'Content-Type': 'application/json',
-        //         },
-        //         body: JSON.stringify(resetStuff),
-        //     };
-        //     fetch(url, options)
-        //         .then(/* post was created successfully */)
-        //         .catch(/* handle errors */);
-        // })
-
-
-        //
-        //     $('#modal').html(`
-        // <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-        //         Edit Movies
-        //     </button>
-        //     <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        //         <div class="modal-dialog" role="document">
-        //         <div class="modal-content">
-        //         <div class="modal-header">
-        //         <h5 class="modal-title" id="exampleModalLabel">Movie Editor</h5>
-        //     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-        //         <span aria-hidden="true">&times;</span>
-        //     </button>
-        //     </div>
-        //     <div class="modal-body">
-        // ...
-        // </div>
-        //     <div class="modal-footer">
-        //         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        //         <button type="button" class="btn btn-primary">Save changes</button>
-        //     </div>
-        //     </div>
-        //     </div>
-        //     </div>`
-        // )
+//     })
+//         .then(function (){
+//         let resetStuff =[{
+//         "title": "Casablanca",
+//             "rating": "4",
+//             "id": 1
+//     },
+//     {
+//         "title": "Star Wars: A New Hope",
+//         "rating": "5",
+//         "id": 2
+//     }];
+//     let url = '/api/movies';
+//     let options = {
+//         method: 'POST',
+//         headers: {
+//             'Content-Type': 'application/json',
+//         },
+//         body: JSON.stringify(resetStuff),
+//     };
+//     fetch(url, options)
+//         .then(/* post was created successfully */)
+//         .catch(/* handle errors */);
+// })
 
 
-    })
-    .catch((error) => {
-        alert('Oh no! Something went wrong.\nCheck the console for details.');
-        console.log(error);
-    });
+//
+//     $('#modal').html(`
+// <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+//         Edit Movies
+//     </button>
+//     <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+//         <div class="modal-dialog" role="document">
+//         <div class="modal-content">
+//         <div class="modal-header">
+//         <h5 class="modal-title" id="exampleModalLabel">Movie Editor</h5>
+//     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+//         <span aria-hidden="true">&times;</span>
+//     </button>
+//     </div>
+//     <div class="modal-body">
+// ...
+// </div>
+//     <div class="modal-footer">
+//         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+//         <button type="button" class="btn btn-primary">Save changes</button>
+//     </div>
+//     </div>
+//     </div>
+//     </div>`
+// )
+
+
+})
+.
+catch((error) => {
+    alert('Oh no! Something went wrong.\nCheck the console for details.');
+    console.log(error);
+});
 
 const $ = require('jquery');
 
