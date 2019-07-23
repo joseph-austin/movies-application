@@ -153,3 +153,9 @@ img {
         font-size: 2rem !important;
     }
 }
+/*.unstarred {*/
+/*    color: gray !important;*/
+/*}*/
+.starred {
+    color: gold !important;
+}
