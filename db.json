@@ -6,7 +6,7 @@
       "id": 1
     },
     {
-      "title": "Star Wars: A New Hope",
+      "title": "Star Wars: Episode IV - A New Hope",
       "rating": "5",
       "id": 2
     },
@@ -19,6 +19,11 @@
       "title": "FIght Club",
       "rating": "5",
       "id": 4
+    },
+    {
+      "title": "Last Shift",
+      "rating": "5",
+      "id": 5
     }
   ]
 }
