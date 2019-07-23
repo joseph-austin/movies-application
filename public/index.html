@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8"/>
-	<title>My Application</title>
-	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-		  integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-	<script src="https://kit.fontawesome.com/9ec51008e6.js"></script>
-	<link rel="stylesheet" href="/style.css"/>
+    <meta charset="UTF-8"/>
+    <title>My Application</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/9ec51008e6.js"></script>
+    <script src="../src/stars.js"></script>
+    <link rel="stylesheet" href="/style.css"/>
 
 </head>
 <body>
@@ -20,73 +21,38 @@
 </nav>
 
 <div class="container">
-	<form id="userInput" class="invis">
-		<div class="form-row">
-			<div class="col-3">
-				<input type="text" class="form-control" id="rated" placeholder="Rating /5">
-			</div>
-			<div class="col-9">
-				<input type="text" class="form-control" id="named" placeholder="Movie Title">
-			</div>
-		</div>
-		<button type="submit" id="submit" class="btn btn-primary">Submit</button>
-		<br><br>
-		<!--        <button id="reset" class="btn btn-primary">Reset to defaults</button>-->
-	</form>
+    <form id="userInput" class="invis">
+        <div class="form-row">
+            <div class="col-3">
+                <input type="text" class="form-control" id="rated" placeholder="Rating /5">
+            </div>
+            <div class="col-9">
+                <input type="text" class="form-control" id="named" placeholder="Movie Title">
+            </div>
+        </div>
+        <button type="submit" id="submit" class="btn btn-primary">Submit</button>
+        <br><br>
+        <!--        <button id="reset" class="btn btn-primary">Reset to defaults</button>-->
+    </form>
 
-	<!--    Editor-->
+    <!--    Editor-->
 
-	<div id="modal"></div>
+    <div id="modal"></div>
 
-	<h1 id="head">Hello There!</h1>
-	<p id="load">loading...</p>
-	<div id="movieList" class="color: rgba(245, 245, 245, 1)"></div>
-	<div id="editor"></div>
+    <h1 id="head">Hello There!</h1>
 
-	<div class="movieDiv container">
-		<div class="row">
-			<div class="col-3 movie-poster">
-				<div class="poster">poster</div>
-			</div>
-			<div class="col-7 movie-info">
-				<h3 class="movieTitle">title</h3>
-				<br>
-				<br>
-				<br>
-				<p class="genres">genres</p>
-				<p class="actors">actors</p>
-			</div>
-			<div class="col-2 movie-buttons">
-				<button type="submit" class="btn btn-primary edit"><i class="fas fa-edit"></i></button>
-				<button type="submit" class="btn btn-primary delete" onclick="location.reload();"><i
-						class="fas fa-trash"></i></button>
-				<div class='rating-stars text-center'>
-					<ul id='stars'>
-						<li class='star' title='Poor' data-value='1'>
-							<i class='fa fa-star fa-fw'></i>
-						</li>
-						<li class='star' title='Fair' data-value='2'>
-							<i class='fa fa-star fa-fw'></i>
-						</li>
-						<li class='star' title='Good' data-value='3'>
-							<i class='fa fa-star fa-fw'></i>
-						</li>
-						<li class='star' title='Excellent' data-value='4'>
-							<i class='fa fa-star fa-fw'></i>
-						</li>
-						<li class='star' title='WOW!!!' data-value='5'>
-							<i class='fa fa-star fa-fw'></i>
-						</li>
-					</ul>
-				</div>
-			</div>
-		</div>
-	</div>
+    <p id="load"><img src="loading-gif.gif" alt=""></p>
+    <div id="movieList" class="color: rgba(245, 245, 245, 1)"></div>
+    <div id="editor"></div>
+
+<!--    <div class="movieDiv container">-->
+<!--        -->
+<!--    </div>-->
 
 
-	<i class="fas fa-ticket-alt"></i>
-	<!--    https://fontawesome.com/icons?d=gallery&q=movie-->
-	<!--    https://codepen.io/depy/pen/vEWWdw-->
+        <i class="fas fa-ticket-alt"></i>
+    <!--    https://fontawesome.com/icons?d=gallery&q=movie-->
+    <!--    https://codepen.io/depy/pen/vEWWdw-->
 
 
 </div>
@@ -94,14 +60,14 @@
 <script src="../src/stars.js"></script>
 
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-		integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-		crossorigin="anonymous"></script>
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-		integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-		crossorigin="anonymous"></script>
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-		integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-		crossorigin="anonymous"></script>
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
 <script src="./main.js"></script>
 </body>
 </html>

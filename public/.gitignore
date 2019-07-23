@@ -1,3 +1,4 @@
 main.js
 *.map
 ../src/index.js
+../src/key.js
