@@ -56,8 +56,9 @@ const getMovies = () => {
     <button type="submit" class="btn btn-primary delete" onclick="location.reload();">
     <i class="fas fa-trash"></i>
     </button> 
+    <section class='rating-widget'>
     <div class="rating-stars text-center">
-        <div id="stars" class="d-flex justify-content-center row"> 
+        <div class="stars d-flex justify-content-center row"> 
             <div class="star col-xl-2 col-sm-6" title="Poor" data-value="1"> 
                 <i class="fa fa-ticket-alt fa-fw"></i> 
             </div> 
@@ -69,7 +70,7 @@ const getMovies = () => {
                     <i class="fa fa-ticket-alt fa-fw"></i> </div> 
             <div class="star col-xl-2 col-sm-6" title="WOW!!!" data-value="5"> 
                     <i class="fa fa-ticket-alt fa-fw"></i> </div> 
-</div></div></div> </div>`)
+</div></div></section></div> </div>`)
 
 
                     })

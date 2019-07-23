@@ -22,6 +22,10 @@ import getMovies from './api.js';
 //     console.log(error);
 // });
 ////////////////////////////////////////////////////////////////
+// import stars from './stars'
+//
+// stars();
+
 let ids;
 getMovies();
 

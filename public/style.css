@@ -57,6 +57,7 @@ body {
     background-color: whitesmoke;
 }
 
+
 .rating-stars div {
     list-style-type: none;
     padding: 0;
@@ -84,6 +85,14 @@ body {
 /* Selected state of the stars */
 .rating-stars div > div.star.selected > i.fa {
     color: #FF912C;
+}
+a {
+    color: tomato;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #2196f3;
 }
 
 /*//////////add to html*/
@@ -137,6 +146,7 @@ img {
     width: 100%;
     height: 100%;
 }
+
 
 @media (min-width: 1200px) {
     .fa-star {
