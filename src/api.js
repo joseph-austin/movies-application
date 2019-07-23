@@ -1,15 +1,15 @@
 const OMDBPull = (title) => {
     return fetch('http://www.omdbapi.com/?i=tt3896198&apikey=dc518b7c&t=' + title)
         .then(response => response.json())
-        // .then((movieInfo) => {
-        //     console.log(movieInfo);
-        //     console.log(movieInfo.Poster);
-        //     console.log(movieInfo.Plot);
-        //     // poster = movieInfo.Poster;
-        //     // let info  = movieInfo.Plot;
-        //
-        //     return movieInfo
-        // })
+    // .then((movieInfo) => {
+    //     console.log(movieInfo);
+    //     console.log(movieInfo.Poster);
+    //     console.log(movieInfo.Plot);
+    //     // poster = movieInfo.Poster;
+    //     // let info  = movieInfo.Plot;
+    //
+    //     return movieInfo
+    // })
 };
 //             $('#userInput').toggleClass('invis');
 //             $('#head').html('Here are all the movies:');
@@ -35,17 +35,48 @@ const getMovies = () => {
             movies.forEach(({title, rating, id}) => {
                 console.log(`id#${id} - ${title} - rating: ${rating}/5`);
                 OMDBPull(title)
-                    .then( function (movieInfo) {
+                    .then(function (movieInfo) {
                         console.log(movieInfo)
 
-                        $('#movieList').append('<br><div class="row"> <div class="col-3 movie-poster" style="border: 1px black solid"> <div class="poster"><img src="'+ movieInfo.Poster +'" alt=""></div> </div><div class="col-6 movie-info" style="border: 1px black solid"> <h3 class="movieTitle">'+title+'</h3> <br> <p class="actors">'+movieInfo.Plot+'</p> </div> <div class="col-3 movie-buttons container" style="border: 1px black solid;"><button type="submit" class="btn btn-primary edit"><i class="fas fa-edit"></i></button> <button type="submit" class="btn btn-primary delete" onclick="location.reload();"><i class="fas fa-trash"></i></button> <div class="rating-stars text-center"><div id="stars" class="d-flex justify-content-center row"> <div class="star col-xl-2 col-sm-6" title="Poor" data-value="1"> <i class="fa fa-ticket-alt fa-fw"></i> </div> <div class="star col-xl-2 col-sm-6" title="Fair" data-value="2"> <i class="fa fa-ticket-alt fa-fw"></i> </div> <div class="star col-xl-2 col-sm-6" title="Good" data-value="3"> <i class="fa fa-ticket-alt fa-fw"></i> </div> <div class="star col-xl-2 col-sm-6" title="Excellent" data-value="4"> <i class="fa fa-ticket-alt fa-fw"></i> </div> <div class="star col-xl-2 col-sm-6" title="WOW!!!" data-value="5"> <i class="fa fa-ticket-alt fa-fw"></i> </div> </div></div></div> </div>')
+                        $('#movieList').append(`<br>
+<div class="row"> 
+
+<div class="col-3 movie-poster" style="border: 1px black solid"> 
+    <div class="poster"><img src="${movieInfo.Poster}" alt=""></div> 
+</div>
+<div class="col-6 movie-info" style="border: 1px black solid"> 
+    <h3 class="movieTitle">${title}</h3> 
+    <br> 
+    <p class="actors">${movieInfo.Plot}</p> 
+</div> 
+<div class="col-3 movie-buttons container" style="border: 1px black solid;">
+    <button type="submit" class="btn btn-primary edit">
+     <i class="fas fa-edit"></i>
+    </button> 
+    <button type="submit" class="btn btn-primary delete" onclick="location.reload();">
+    <i class="fas fa-trash"></i>
+    </button> 
+    <div class="rating-stars text-center">
+        <div id="stars" class="d-flex justify-content-center row"> 
+            <div class="star col-xl-2 col-sm-6" title="Poor" data-value="1"> 
+                <i class="fa fa-ticket-alt fa-fw"></i> 
+            </div> 
+            <div class="star col-xl-2 col-sm-6" title="Fair" data-value="2"> 
+                <i class="fa fa-ticket-alt fa-fw"></i> </div> 
+            <div class="star col-xl-2 col-sm-6" title="Good" data-value="3"> 
+                    <i class="fa fa-ticket-alt fa-fw"></i> </div> 
+            <div class="star col-xl-2 col-sm-6" title="Excellent" data-value="4"> 
+                    <i class="fa fa-ticket-alt fa-fw"></i> </div> 
+            <div class="star col-xl-2 col-sm-6" title="WOW!!!" data-value="5"> 
+                    <i class="fa fa-ticket-alt fa-fw"></i> </div> 
+</div></div></div> </div>`)
 
 
                     })
-                    // .then(
-                    //     $('#movieList').append('<br><div class="row"> <div class="col-3 movie-poster" style="border: 1px black solid"> <div class="poster"><img src="'+ movieInfo.Poster +'" alt=""></div> </div><div class="col-6 movie-info" style="border: 1px black solid"> <h3 class="movieTitle">'+title+'</h3> <br> <p class="actors">'+info+'</p> </div> <div class="col-3 movie-buttons container" style="border: 1px black solid;"><button type="submit" class="btn btn-primary edit"><i class="fas fa-edit"></i></button> <button type="submit" class="btn btn-primary delete" onclick="location.reload();"><i class="fas fa-trash"></i></button> <div class="rating-stars text-center"><div id="stars" class="d-flex justify-content-center row"> <div class="star col-xl-2 col-sm-6" title="Poor" data-value="1"> <i class="fa fa-ticket-alt fa-fw"></i> </div> <div class="star col-xl-2 col-sm-6" title="Fair" data-value="2"> <i class="fa fa-ticket-alt fa-fw"></i> </div> <div class="star col-xl-2 col-sm-6" title="Good" data-value="3"> <i class="fa fa-ticket-alt fa-fw"></i> </div> <div class="star col-xl-2 col-sm-6" title="Excellent" data-value="4"> <i class="fa fa-ticket-alt fa-fw"></i> </div> <div class="star col-xl-2 col-sm-6" title="WOW!!!" data-value="5"> <i class="fa fa-ticket-alt fa-fw"></i> </div> </div></div></div> </div>')
-                    // )
-                    });
+                // .then(
+                //     $('#movieList').append('<br><div class="row"> <div class="col-3 movie-poster" style="border: 1px black solid"> <div class="poster"><img src="'+ movieInfo.Poster +'" alt=""></div> </div><div class="col-6 movie-info" style="border: 1px black solid"> <h3 class="movieTitle">'+title+'</h3> <br> <p class="actors">'+info+'</p> </div> <div class="col-3 movie-buttons container" style="border: 1px black solid;"><button type="submit" class="btn btn-primary edit"><i class="fas fa-edit"></i></button> <button type="submit" class="btn btn-primary delete" onclick="location.reload();"><i class="fas fa-trash"></i></button> <div class="rating-stars text-center"><div id="stars" class="d-flex justify-content-center row"> <div class="star col-xl-2 col-sm-6" title="Poor" data-value="1"> <i class="fa fa-ticket-alt fa-fw"></i> </div> <div class="star col-xl-2 col-sm-6" title="Fair" data-value="2"> <i class="fa fa-ticket-alt fa-fw"></i> </div> <div class="star col-xl-2 col-sm-6" title="Good" data-value="3"> <i class="fa fa-ticket-alt fa-fw"></i> </div> <div class="star col-xl-2 col-sm-6" title="Excellent" data-value="4"> <i class="fa fa-ticket-alt fa-fw"></i> </div> <div class="star col-xl-2 col-sm-6" title="WOW!!!" data-value="5"> <i class="fa fa-ticket-alt fa-fw"></i> </div> </div></div></div> </div>')
+                // )
+            });
 
             $('.edit').click(function () {
                 // $(this).parent().html('');

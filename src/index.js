@@ -23,8 +23,6 @@ import getMovies from './api.js';
 // });
 ////////////////////////////////////////////////////////////////
 let ids;
-// let poster;
-// let info;
 getMovies();
 
 
