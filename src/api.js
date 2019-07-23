@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 const OMDBPull = (title) => {
     return fetch('http://www.omdbapi.com/?i=tt3896198&apikey=dc518b7c&t=' + title)
         .then(response => response.json())
@@ -75,6 +76,21 @@ const getMovies = () => {
             <div class="star star5 col-xl-2 col-sm-6" title="WOW!!!" data-value="5"> 
                     <i class="fa fa-ticket-alt fa-fw"></i> </div> 
 </div></div></section></div> </div>`);
+=======
+const getMovies = () => {
+    return fetch('/api/movies').then(response => response.json())
+        .then((movies) => {
+            let ids = movies.length + 1;
+            console.log(ids);
+            $('#userInput').toggleClass('invis');
+            $('#head').html('Here are all the movies:');
+            $('#load').html('');
+            movies.forEach(({title, rating, id}) => {
+                console.log(`id#${id} - ${title} - rating: ${rating}/5`);
+                $('#movieList').append(`<br><div id="${id}">id#${id} - ${title} - rating: ${rating}/5 <button type="submit" class="btn btn-primary edit"><i class="fas fa-edit"></i></button> 
+<button type="submit" class="btn btn-primary delete" onclick="location.reload();"><i class="fas fa-trash"></i></button></div>`);
+            });
+>>>>>>> parent of b7c2b2f... pulled info from OMDB, need to ,make it pretty
 
                                 $('.edit').click(function () {
                                     console.log('worked');
@@ -278,16 +294,6 @@ const getMovies = () => {
 
     }
 ;
-
-
-//            movie-poster
-//     "Poster"
-//            movie-info
-// "Plot"
-
-//            movie-buttons
-
-import OMDBKey from './key.js';
 
 
 export default getMovies
