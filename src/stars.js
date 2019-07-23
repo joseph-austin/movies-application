@@ -19,7 +19,7 @@ $('#stars li').on('mouseover', function(){
 
 
 /* 2. Action to perform on click */
-$('#stars li').on('click', function(){
+$('#stars li').on('click', function() {
     var onStar = parseInt($(this).data('value'), 10); // The star currently selected
     var stars = $(this).parent().children('li.star');
 
@@ -30,3 +30,4 @@ $('#stars li').on('click', function(){
     for (i = 0; i < onStar; i++) {
         $(stars[i]).addClass('selected');
     }
+});

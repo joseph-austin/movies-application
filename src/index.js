@@ -23,6 +23,8 @@ import getMovies from './api.js';
 // });
 ////////////////////////////////////////////////////////////////
 let ids;
+// let poster;
+// let info;
 getMovies();
 
 
@@ -94,16 +96,5 @@ $('#submit').on('click', function () {
 
 ////////////////////OMDB
 
-const OMDBPull = () => {
-    return fetch('http://www.omdbapi.com/?apikey=' +OMDBKey+'&\n').then(response => response.json())
-        .then((movies) => {
-            let ids = movies.length + 1;
-            console.log(ids);
-            $('#userInput').toggleClass('invis');
-            $('#head').html('Here are all the movies:');
-            $('#load').html('');
-            movies.forEach(({title, rating, id}) => {
-                console.log(`id#${id} - ${title} - rating: ${rating}/5`);
-                $('#movieList').append(`<br><div id="${id}">id#${id} - ${title} - rating: ${rating}/5 <button type="submit" class="btn btn-primary edit"><i class="fas fa-edit"></i></button> 
-<button type="submit" class="btn btn-primary delete" onclick="location.reload();"><i class="fas fa-trash"></i></button></div>`);
-            });
+
+
