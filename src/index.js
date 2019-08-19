@@ -115,3 +115,6 @@ $('#submit').on('click', function () {
 // <button type="submit" class="btn btn-primary delete" onclick="location.reload();"><i class="fas fa-trash"></i></button></div>`);
 //             });
 // >>>>>>> parent of b7c2b2f... pulled info from OMDB, need to ,make it pretty
+
+///////////////////Changed
+
