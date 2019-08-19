@@ -75,7 +75,7 @@ const getMovies = () => {
             <div class="star star5 col-xl-2 col-sm-6" title="WOW!!!" data-value="5"> 
                     <i class="fa fa-ticket-alt fa-fw"></i> </div> 
 </div></div></section>
-<div style="color: dimgray; text-align: center; font-size: 3rem">${movieInfo.imdbRating}/10</div>
+<div class="ratingSection">${movieInfo.imdbRating}/10</div>
 </div> </div>`);
 // =======
 // const getMovies = () => {
@@ -146,7 +146,8 @@ const getMovies = () => {
                                 });
 
                                 $('.delete').click(function () {
-                                    let movieId = id -1;
+                                    // let movieId = id -1;
+                                    let movieId = id;
                                     console.log(movieId);
 
                                     // let movieEdited = {title: title, rating: rating, id: ids};

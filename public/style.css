@@ -2,6 +2,12 @@ html, body {
     height: 100%;
 }
 
+.ratingSection {
+    color: dimgray;
+    text-align: center;
+    font-size: 3rem
+}
+
 body {
     background-image: url("background.jpg");
     background-attachment: fixed;
@@ -9,7 +15,6 @@ body {
     background-size: cover;
     background-position: center;
     color: rgba(245, 245, 245, 1);
-
 }
 
 .container {
@@ -86,6 +91,7 @@ body {
 .rating-stars div > div.star.selected > i.fa {
     color: #FF912C;
 }
+
 a {
     color: tomato;
     text-decoration: none;
@@ -128,18 +134,22 @@ a:hover {
 #star {
     margin: 0 !important;
 }
+
 button {
-    margin-top: .5rem!important;
-    margin-bottom: .5rem!important;
+    margin-top: .5rem !important;
+    margin-bottom: .5rem !important;
 }
+
 #userInput {
     padding-top: 1rem;
 }
+
 .btn-primary {
     background-color: darkorange;
     color: whitesmoke;
     border-color: dimgrey;
 }
+
 img {
     margin: 0;
     padding: 0;
@@ -153,9 +163,16 @@ img {
         font-size: 2rem !important;
     }
 }
+
 /*.unstarred {*/
 /*    color: gray !important;*/
 /*}*/
 .starred {
     color: gold !important;
+}
+
+@media screen and (max-width:992px) {
+    .ratingSection {
+        font-size: 1.5rem;
+    }
 }
