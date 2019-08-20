@@ -37,7 +37,8 @@
 //     });
 // }
 // export default stars
-$('#stars li').on('mouseover', function () {
+$('.stars > i').on('mouseover', function () {
+    console.log('star');
     var onStar = parseInt($(this).data('value'), 10); // The star currently mouse on
 
     // Now highlight all the stars that's not after the current hovered star
@@ -57,7 +58,7 @@ $('#stars li').on('mouseover', function () {
 
 
 /* 2. Action to perform on click */
-$('#stars li').on('click', function () {
+$('.stars > i').on('click', function () {
     var onStar = parseInt($(this).data('value'), 10); // The star currently selected
     var stars = $(this).parent().children('li.star');
 

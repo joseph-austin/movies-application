@@ -58,6 +58,98 @@ $('#submit').on('click', function () {
         .catch(/* handle errors */);
 });
 
+$('#edit').click(function (e) {
+    e.preventDefault();
+    console.log('worked');
+    return fetch('/api/movies').then(response => response.json())
+        .then((movies) => {
+            let ids = movies.length + 1;
+            let poster;
+            let info;
+            let movieId, movieOldTitle, movieOldRating;
+            $('#editBox').append(`
+            <div class="row">
+            <div class="col">
+            <h1>Rating</h1>
+            </div>
+           <div class="col">
+             <h1>Movie Title</h1>
+           </div>
+         </div>
+         </form>`);
+
+            movies.forEach(({title, rating, id}) => {
+                console.log(`id#${id} - ${title} - rating: ${rating}/5`);
+
+
+                $('#editBox').append(`
+         <div class="row">
+           <div class="col">
+             <input type="text" class="form-control" id="editorRate${id}">
+           </div>
+           <div class="col">
+             <input type="text" class="form-control" id="editorTitle${id}">
+           </div>
+           <div class="col">
+                   <button type="submit" class="editSubmit btn btn-primary" onclick="location.reload();" id="${id}" class="btn btn-primary">Submit</button>
+                   <button type="submit" class="editDelete btn btn-primary" onclick="location.reload();" id="${id}" class="btn btn-primary">Delete</button>
+</div>
+         </div>
+         </form>`);
+                $(`#editorRate${id}`).attr({value: rating});
+                $(`#editorTitle${id}`).attr({value: title});
+
+
+                ////////////
+                $('.editSubmit').click(function (e) {
+                    e.preventDefault();
+
+                    console.log($(this).attr('id'));
+                    let logger = ($(this).attr('id'));
+                    let rating = $(`#editorRate${logger}`).val();
+                    let title = $(`#editorTitle${logger}`).val();
+                    console.log(title);
+                    console.log(rating);
+
+                    let movieEdited = {title: title, rating: rating, id: logger};
+                    console.log(movieEdited);
+                    let url = `/api/movies/${logger}`;
+                    console.log(url);
+                    let options = {
+                        method: 'PATCH',
+                        headers: {
+                            'Content-Type': 'application/json',
+                        },
+                        body: JSON.stringify(movieEdited),
+                    };
+                    fetch(url, options)
+                        .then()
+                        .catch();
+                });
+
+                $('.editDelete').click(function (e) {
+                    e.preventDefault();
+                    let logger = ($(this).attr('id'));
+                    let url = `/api/movies/${logger}`;
+                    console.log(url);
+                    let options = {
+                        method: 'DELETE',
+                        headers: {
+                            'Content-Type': 'application/json',
+                        }
+                    };
+                    fetch(url, options)
+                        .then()
+                        .catch(/* handle errors */);
+                });
+            });
+            $('#edit').css('display', 'none');
+
+        });
+
+
+});
+
 //     let title = document.getElementById('named').value;
 //     // console.log(title);
 //     // console.log(document.getElementById('named').value);

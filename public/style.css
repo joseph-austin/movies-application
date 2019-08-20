@@ -79,7 +79,7 @@ body {
 /* Idle State of the stars */
 .rating-stars div > div.star > i.fa {
     font-size: 2.5em; /* Change the size of the stars */
-    color: #ccc; /* Color on idle state */
+    color: gold; /* Color on idle state */
 }
 
 /* Hover state of the stars */
@@ -98,7 +98,13 @@ a {
 }
 
 a:hover {
-    color: #2196f3;
+    color: orange!important;
+}
+.btn-primary:hover {
+    background-color: orange!important;
+}
+.btn-primary{
+    border: orange solid 1px!important;
 }
 
 /*//////////add to html*/
