@@ -19,6 +19,26 @@
       "title": "IT",
       "rating": "5",
       "id": 5
+    },
+    {
+      "title": "Pan's Labyrinth",
+      "rating": "5",
+      "id": 6
+    },
+    {
+      "title": "A Quiet Place",
+      "rating": "3",
+      "id": 7
+    },
+    {
+      "title": "shrek the third",
+      "rating": "2",
+      "id": 8
+    },
+    {
+      "title": "the snowman",
+      "rating": "4",
+      "id": 9
     }
   ]
 }

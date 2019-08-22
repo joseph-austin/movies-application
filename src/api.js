@@ -22,7 +22,7 @@ const getMovies = () => {
                     .then(function (movieInfo) {
                         console.log(movieInfo);
                         let tix;
-                        switch (Number(rating)){
+                        switch (Number(rating)) {
                             case 5:
                                 tix = `
             <div class="star star1 col-xl-2 col-sm-6" title="Poor" data-value="1"> 
@@ -82,7 +82,7 @@ const getMovies = () => {
     <div class="poster"><img src="${movieInfo.Poster}" alt=""></div> 
 </div>
 <div class="col-6 movie-info" style="border: 1px black solid"> 
-    <h3 class="movieTitle">${title}</h3> 
+    <h3 class="movieTitle">${movieInfo.Title}</h3> 
     <br> 
     <p class="actors">${movieInfo.Plot}</p> 
 </div> 
@@ -96,6 +96,7 @@ const getMovies = () => {
 <!--    <i class="fas fa-trash"></i>-->
     </button> 
     <section class='rating-widget'>
+    <br>
     <div class="rating-stars text-center">
                             <h4 style="color: dimgray; text-align: center">User Rating</h4>
         <div class="stars d-flex justify-content-center row"> 
@@ -111,10 +112,17 @@ const getMovies = () => {
 <!--            <div class="star star5 col-xl-2 col-sm-6" title="WOW!!!" data-value="5"> -->
 <!--                    <i class="fa fa-ticket-alt fa-fw"></i> </div> -->
 ${tix}
+
 </div></div></section>
+<hr>
                             <h4 style="color: dimgray; text-align: center">IMDB Rating</h4>
 
 <div class="ratingSection">${movieInfo.imdbRating}/10</div>
+<hr>
+                            <h4 style="color: dimgray; text-align: center">Rotten Tomatoes</h4>
+
+<div class="ratingSection">${movieInfo.Ratings[1].Value}</div>
+
 </div> </div>`);
                     })
             });
